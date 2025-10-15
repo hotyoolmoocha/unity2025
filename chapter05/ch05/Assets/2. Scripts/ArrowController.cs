@@ -23,6 +23,7 @@ public class ArrowController : MonoBehaviour
 
         if (transform.position.y < -7f)
         {
+           
             Destroy(gameObject);
         }
 
@@ -37,6 +38,9 @@ public class ArrowController : MonoBehaviour
 
         if(Distance < arrowRadius + playerRadius)
         {
+            GameObject director = GameObject.Find("GameDirector");
+            director.GetComponent<GameDirector>().DecreaseHP();
+
             Destroy (gameObject);
         }
     }
